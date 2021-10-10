@@ -5,4 +5,5 @@ export const appColors = {
   backgroundColor: '#fff',
   overlayColor: '#bde2f5',
   subtitleColor: '#20b0b7',
+  grey: 'rgba(211,211,211,0.1)'
 };
