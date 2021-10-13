@@ -1,5 +1,14 @@
 import React from 'react';
 import CustomersNavigator from './customers.navigator';
+import CustomersContextProvider from '../../services/customers.context';
+const Navigator= () => {
+  return(
+    <>
+      <CustomersContextProvider>
+        <CustomersNavigator/>
+      </CustomersContextProvider>
+    </>
+  );
+}
 
-const Navigator= ()=> <CustomersNavigator/>
 export default Navigator
