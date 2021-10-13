@@ -1,11 +1,14 @@
-import React, {createContext} from 'react';
+import React, {createContext, useState} from 'react';
 
 
-const CustomersContext = createContext();
+export const CustomersContext = createContext();
 
 const CustomersContextProvider = ({children})=>{
+  
+  const [userCredentials, setUserCredentials] = useState({})
+
   return(
-    <CustomersContext.Provider value={null} >
+    <CustomersContext.Provider value={{userCredentials, setUserCredentials}} >
         {children}
     </CustomersContext.Provider>
   );

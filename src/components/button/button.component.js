@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
   circle:{
     position:'absolute',
     right:10,
-    rotation:260
+    rotation: 260
   }
 })

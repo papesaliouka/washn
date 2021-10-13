@@ -1,11 +1,18 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import Header from '../../components/header/header.component';
 import {View,Text,StyleSheet} from 'react-native';
 import Button from '../../components/button/button.component';
 import Icon from 'react-native-vector-icons/AntDesign';
 import VerifCode from 'rn-verifcode';
 import {appColors} from '../../infrastructure/appColors';
+
+import {CustomersContext} from '../../services/customers.context';
+
+
 const ConfirmationScreen = ({navigation})=>{
+
+  const {userCredentials:{phone}} = useContext(CustomersContext);
+
   return(
     <View>
       <Header onPress={()=> navigation.goBack()} title='Confirmation' />
@@ -16,7 +23,7 @@ const ConfirmationScreen = ({navigation})=>{
       <Icon name='checkcircle' style={{alignSelf:'center', marginTop:40}} size={72} color={appColors.primaryColor}/>
       <View style={[styles.container],{backgroundColor:'whitesmoke', marginTop:40}}>
         <Text style={{color:appColors.subtitleColor, textAlign:'center'}}>A code has been sent to</Text>
-        <Text style={{textAlign:'center', fontSize:32}} >00 000 000 00</Text> 
+        <Text style={{textAlign:'center', fontSize:32}} >{phone}</Text> 
       </View>
       <VerifCode numberOfDigits={4} style={{borderColor: appColors.overlayColor, borderWidth:0, borderBottomWidth:1, textAlign:'center', marginLeft:60}} />
       <Button icon color/>

@@ -11,8 +11,6 @@ const SignInForm = ({navigation})=>{
       <Button title='SIGN IN' icon color/>
       <Button title='SIGN UP' onPress={()=> navigation.navigate('Sign Up')} />
       <Spacer h={80} />
-      <Button title='JOIN US'/>
- 
     </>
   );
 };
