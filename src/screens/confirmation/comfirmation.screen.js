@@ -26,7 +26,7 @@ const ConfirmationScreen = ({navigation})=>{
         <Text style={{textAlign:'center', fontSize:32}} >{phone}</Text> 
       </View>
       <VerifCode numberOfDigits={4} style={{borderColor: appColors.overlayColor, borderWidth:0, borderBottomWidth:1, textAlign:'center', marginLeft:60}} />
-      <Button icon color/>
+      <Button icon color onPress={()=> navigation.navigate('Profile')}/>
     </View>
   );
 }
