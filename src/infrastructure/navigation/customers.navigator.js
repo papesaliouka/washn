@@ -8,6 +8,8 @@ import ConfirmationScreen from '../../screens/confirmation/comfirmation.screen';
 import SignupScreen from '../../screens/signup/signup.screen'
 import ProfileScreen from '../../screens/profile/profile.screen';
 import GetWashnScreen from '../../screens/get-washn/getwashn.screen';
+
+
 const Stack = createNativeStackNavigator();
 
 const CustomersNavigator=()=> {
@@ -15,7 +17,7 @@ const CustomersNavigator=()=> {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Sign In"
+        initialRouteName="Getwashn"
         screenOptions={{
             headerShown: false
           }}
