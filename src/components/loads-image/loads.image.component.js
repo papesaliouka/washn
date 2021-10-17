@@ -19,6 +19,6 @@ const styles=StyleSheet.create({
     marginBottom: 20,
     borderRadius:10,
     borderColor:appColors.primaryColor,
-    height:150,
+    height:130,
   }
 })

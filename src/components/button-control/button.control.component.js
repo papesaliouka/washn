@@ -1,35 +1,45 @@
-import React,{useState} from 'react';
-import {View,Text, StyleSheet, TouchableOpacity} from 'react-native';
+import React,{useState, useContext} from 'react';
+import {View,Text,  TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 
-import { appColors } from '../../infrastructure/appColors';
+import {CustomersContext} from '../../services/customers.context';
+
+import {styles} from './button.control.styles'
 
 const ButtonControl = ()=>{
-  const [count,setCount] = useState(0)
-  return(
-    <View style={styles.container} >
-    <TouchableOpacity style={styles.touch} >
-      <Icon name='left' color='white' size={18} />
-    </TouchableOpacity>
-      <Text style={{color:'white'}} >{count}</Text>
-    <TouchableOpacity style={styles.touch} >
-      <Icon name='right' color='white' size={18} style={{alignSelf:'flex-end'}} />
-    </TouchableOpacity>
-    </View>
-  );
+
+    const [count,setCount] = useState(0);
+    const {setTotalCount} = useContext(CustomersContext);
+
+    const increment = ()=> { setCount(prev => prev+1) ; setTotalCount(prev => prev+1)}
+  
+    const decrement =()=>{
+      // decrement the inline number in the button
+        setCount(prev=> prev>=1 ? prev-1:0);
+      //decrement the total count
+        setTotalCount(prev => {
+          if( prev>=1 && count>=1){
+            return prev -1
+          }if( prev >=1 && count==0){
+            return prev
+          }
+          return 0
+        }
+    )}
+
+    return(
+      <View style={styles.container} >
+        <TouchableOpacity style={styles.touch} onPress={()=> decrement()} >
+          <Icon name='left' color='white' size={14} />
+        </TouchableOpacity>
+          <Text style={{color:'white'}} >{count}</Text>
+        <TouchableOpacity style={styles.touch} onPress={()=>increment()} >
+          <Icon name='right' color='white' size={14} />
+        </TouchableOpacity>
+      </View>
+    );
 };
 
 export default ButtonControl;
 
-const styles=StyleSheet.create({
-  container:{
-    backgroundColor:appColors.primaryColor,
-    flexDirection:'row',
-    justifyContent:'space-evenly',
-    borderRadius:100,
-    alignItems:'center',
-    width:100,
-    height:45
-  },
-  touch:{backgroundColor:'transparent', width:30, height:30, justifyContent:'center'}
-})
+
