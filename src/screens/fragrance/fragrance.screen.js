@@ -21,7 +21,7 @@ const FragranceScreen = ({navigation})=>{
       <Text style={styles.title} >Dry</Text>
       {dry.map(item=> <Selector title={item} key={item}  style={styles.border} component={<CheckControl item={item} type={'dry'} />}  />)}
       <Spacer h={30}/>
-      <Button color icon style={{width:180, alignSelf:'center', backgroundColor:appColors.secondaryColor}}  />
+      <Button color icon style={{width:180, alignSelf:'center', backgroundColor:appColors.secondaryColor}} onPress={()=> navigation.navigate('Pickup')} />
    </>
   );
 };

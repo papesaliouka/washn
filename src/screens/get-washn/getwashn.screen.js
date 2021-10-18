@@ -36,7 +36,7 @@ const GetWashnScreen = ({navigation})=>{
       <Selector title='Total Loads' component={<Text style={styles.text} >{totalCount}</Text>} />
       <Selector title='Estimated Cost' component={<Text style={styles.text} >${cost}</Text>} />
       <Spacer h={20} />
-      <Button icon color style={{width:200, alignSelf:'center'}} onPress={()=> navigation.navigate('Fragance')} />
+      <Button icon color style={{width:200, alignSelf:'center'}} onPress={()=> navigation.navigate('Fragrance')} />
       <Spacer h={100} />
     </>
   );

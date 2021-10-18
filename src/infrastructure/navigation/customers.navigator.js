@@ -9,6 +9,7 @@ import SignupScreen from '../../screens/signup/signup.screen'
 import ProfileScreen from '../../screens/profile/profile.screen';
 import GetWashnScreen from '../../screens/get-washn/getwashn.screen';
 import FragranceScreen from '../../screens/fragrance/fragrance.screen';
+import PickupScreen from '../../screens/pickup/pickup.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ const CustomersNavigator=()=> {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Fragrance"
+        initialRouteName="Getwashn"
         screenOptions={{
             headerShown: false
           }}
@@ -28,6 +29,7 @@ const CustomersNavigator=()=> {
         <Stack.Screen name='Profile' component={ProfileScreen}/>
         <Stack.Screen name='Getwashn' component={GetWashnScreen}/>
         <Stack.Screen name='Fragrance' component={FragranceScreen}/>
+        <Stack.Screen name='Pickup' component={PickupScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
