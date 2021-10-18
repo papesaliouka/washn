@@ -23,7 +23,7 @@ const array = [
 
 const GetWashnScreen = ({navigation})=>{
   const {totalCount, cost} = useContext(CustomersContext);
-  const renderItem = ({item:{name,id}}) => <Selector title={name} component={<ButtonControl key={`but-${id}`} />} key={`key-${id}`} /> 
+  const renderItem = ({item:{name,id}}) => <Selector title={name} component={<ButtonControl/>} key={id}/> 
   return(
     <>
       <Header title={`What are we Wash'n`} onPress={()=> navigation.goBack()} />
@@ -31,6 +31,7 @@ const GetWashnScreen = ({navigation})=>{
       <FlatList
         data={array}
         renderItem={renderItem}
+        keyExtractor={(item)=> item.id}
       />
       <Selector title='Total Loads' component={<Text style={styles.text} >{totalCount}</Text>} />
       <Selector title='Estimated Cost' component={<Text style={styles.text} >${cost}</Text>} />

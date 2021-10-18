@@ -7,7 +7,8 @@ const CustomersContextProvider = ({children})=>{
   
   const [totalCount, setTotalCount] = useState(0);
   const [cost, setCost] = useState(0);
-
+  const [dryList, setDryList] = useState([]);
+  const [detergentList, setDetergentList] = useState([]);
   const [userCredentials, setUserCredentials] = useState(0);
 
   useEffect(()=>{
@@ -15,7 +16,17 @@ const CustomersContextProvider = ({children})=>{
   },[totalCount])
 
   return(
-    <CustomersContext.Provider value={{userCredentials, setUserCredentials, cost, setCost, totalCount, setTotalCount}} >
+    <CustomersContext.Provider 
+      value={
+        {
+          userCredentials, setUserCredentials,
+          cost, setCost,
+          totalCount, setTotalCount,
+          detergentList,setDetergentList,
+          dryList, setDryList
+        }
+      } 
+    >
         {children}
     </CustomersContext.Provider>
   );

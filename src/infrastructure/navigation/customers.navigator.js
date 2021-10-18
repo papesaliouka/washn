@@ -8,7 +8,7 @@ import ConfirmationScreen from '../../screens/confirmation/comfirmation.screen';
 import SignupScreen from '../../screens/signup/signup.screen'
 import ProfileScreen from '../../screens/profile/profile.screen';
 import GetWashnScreen from '../../screens/get-washn/getwashn.screen';
-
+import FragranceScreen from '../../screens/fragrance/fragrance.screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ const CustomersNavigator=()=> {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Getwashn"
+        initialRouteName="Fragrance"
         screenOptions={{
             headerShown: false
           }}
@@ -27,6 +27,7 @@ const CustomersNavigator=()=> {
         <Stack.Screen name='Confirmation' component={ConfirmationScreen}/>
         <Stack.Screen name='Profile' component={ProfileScreen}/>
         <Stack.Screen name='Getwashn' component={GetWashnScreen}/>
+        <Stack.Screen name='Fragrance' component={FragranceScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
